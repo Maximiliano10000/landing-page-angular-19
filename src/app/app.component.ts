@@ -1,12 +1,25 @@
+//Importamos las librerias
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
+//MetaData del Componente
 @Component({
+  //Llamar a nuestro componente
   selector: 'app-root',
-  imports: [RouterOutlet],
+  //Template del componente
+  imports: [RouterOutlet, RouterLink],
+  //Llamar la plantilla del componente
   templateUrl: './app.component.html',
+  //Llamar a los distintos archivos de estilos CSS
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'curso-angular-youtube';
+  
+  // Variables del componente
+  menuOption:string = ''
+  
+  // Metodos del componente
+  onOption (menuOption:string){
+    this.menuOption = menuOption
+  }
 }
